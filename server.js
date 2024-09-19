@@ -8,13 +8,9 @@ const login = require("./routes/login");
 
 const PORT = process.env.PORT || 8000;
 dotenv.config();
-const corsOptions = {
-  origin: '*', // Test üçün bütün domenlərə icazə verilir, istehsalda xüsusi domenlər təyin edin
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-};
 
-app.use(cors(corsOptions));
+
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded());
